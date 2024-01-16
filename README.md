@@ -17,7 +17,7 @@
         "SECRET_WORDS": your_secret_words,
         "PRIVATE_KEY": your_private_key,
         "ACCOUNT_ADDRESS": your_account_address,
-        "PASSWORD": "QQqq1111",
+        "PASSWORD": your_own_password,
         "REMOTE_DEBUGGING_PORT": 9222
     }   
     ```
