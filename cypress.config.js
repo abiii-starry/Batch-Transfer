@@ -10,7 +10,7 @@ module.exports = defineConfig({
       synpressPlugins(on, config);
     },
     testIsolation: true,
-    baseUrl: "",
+    baseUrl: "https://batch-transfer-ten.vercel.app/",
     supportFile: "cypress/support/e2e.js",
     // specPattern: []
   },

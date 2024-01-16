@@ -1,0 +1,72 @@
+{
+    "arbitrum": {
+        "tokenSymbol":"Spell Token",
+        "tokenContract": "0x3E6648C5a70A150A88bCE65F4aD4d506Fe15d2AF",
+        "receiversList": [
+            {
+                "address": "0x34833f0A35fa55C0d13cEf4b727F51f679ED6523",
+                "amount": 0.1
+            },
+            {
+                "address": "0xD911187BdE1A758882FC992835f1BA4157e47E55",
+                "amount": 0.2
+            }
+        ]
+    },
+    "avalanche": {
+        "tokenSymbol":"AKITAX",
+        "tokenContract": "0xE06fba763C2104dB5027F57f6A5Be0a0D86308af",
+        "receiversList": [
+            {
+                "address": "0x34833f0A35fa55C0d13cEf4b727F51f679ED6523",
+                "amount": 0.1
+            },
+            {
+                "address": "0xD911187BdE1A758882FC992835f1BA4157e47E55",
+                "amount": 0.2
+            }
+        ]
+    },
+    "bsc": {
+        "tokenSymbol": "BIBI",
+        "tokenContract": "0xFE8bF5B8F5e4eb5f9BC2be16303f7dAB8CF56aA8",
+        "receiversList": [
+            {
+                "address": "0x34833f0A35fa55C0d13cEf4b727F51f679ED6523",
+                "amount": 1
+            },
+            {
+                "address": "0xD911187BdE1A758882FC992835f1BA4157e47E55",
+                "amount": 10
+            }
+        ]
+    },
+    "polygon": {
+        "tokenSymbol": "SHIB",
+        "tokenContract": "0x6f8a06447Ff6FcF75d803135a7de15CE88C1d4ec",
+        "receiversList": [
+            {
+                "address": "0x34833f0A35fa55C0d13cEf4b727F51f679ED6523",
+                "amount": 1
+            },
+            {
+                "address": "0xD911187BdE1A758882FC992835f1BA4157e47E55",
+                "amount": 10
+            }
+        ]
+    },
+    "fantom": {
+        "tokenSymbol": "fPEPE.io",
+        "tokenContract": "0x15f569FBc24186bB8D000b82Cf40a7500cE5B12F",
+        "receiversList": [
+            {
+                "address": "0x34833f0A35fa55C0d13cEf4b727F51f679ED6523",
+                "amount": 1
+            },
+            {
+                "address": "0xD911187BdE1A758882FC992835f1BA4157e47E55",
+                "amount": 10
+            }
+        ]
+    }
+}
