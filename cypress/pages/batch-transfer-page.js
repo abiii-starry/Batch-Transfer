@@ -39,6 +39,10 @@ class TransferPage{
     getUnlockBtn() {
         return cy.get("div > span").contains("Unlock")
     }
+
+    getTransferStatusBoard() {
+        return cy.get("[id^='headlessui-dialog-panel-']")
+    }
 }
 
-module.exports = new TransferPage()
+module.exports = new TransferPage() 
