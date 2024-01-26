@@ -47,11 +47,7 @@
         "receiversList": [
             {
                 "address": "0x34833f0A35fa55C0d13cEf4b727F51f679ED6523",
-                "amount": 1
-            },
-            {
-                "address": "0xD911187BdE1A758882FC992835f1BA4157e47E55",
-                "amount": 10
+                "amount": 3
             }
         ]
     },
@@ -62,10 +58,6 @@
             {
                 "address": "0x34833f0A35fa55C0d13cEf4b727F51f679ED6523",
                 "amount": 1
-            },
-            {
-                "address": "0xD911187BdE1A758882FC992835f1BA4157e47E55",
-                "amount": 10
             }
         ]
     }

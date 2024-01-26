@@ -4,7 +4,7 @@ class TransferPage{
     }
 
     getReceiverNum() {
-
+        // todo
     }
 
     getReceiverAddrInput() {
@@ -33,7 +33,11 @@ class TransferPage{
     }
 
     getTokenRecommend() {
-        
+        // todo
+    }
+
+    getUnlockBtnContainer() {
+        return cy.get(".gap-4").prev()
     }
 
     getUnlockBtn() {
@@ -42,6 +46,15 @@ class TransferPage{
 
     getTransferStatusBoard() {
         return cy.get("[id^='headlessui-dialog-panel-']")
+    }
+
+    getTransferStatusTitle() {
+        // Support title: Waiting For Approvement\Transfer Submit
+        return cy.get("[data-cy='transfer-status-title']")
+    }
+
+    getTransferStatusBoardCloseBtn() {
+        return cy.get(".transition-all.ring-1 div.flex > svg")
     }
 }
 

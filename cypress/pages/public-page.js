@@ -16,6 +16,11 @@ class PublicPage{
     getConnectBoard() {
         return cy.get("w3m-modal").shadow("w3m-router")
     }
+
+    getConnectWalletBtn() {
+        // return cy.get("[data-cy='connect-btn']")
+        return cy.get('.justify-end > [data-cy="connect-btn"]')
+    }
 }
 
 module.exports = new PublicPage()

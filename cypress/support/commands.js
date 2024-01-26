@@ -25,11 +25,12 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import transferPage from "../pages/batch-transfer-page"
 import publicPage from "../pages/public-page"
-import { chainList } from "../fixtures/chain-list"
+import { chainList, chainBrowser } from "../fixtures/chain-list"
 
 Cypress.Commands.add("typeReceiver", (receiversList) => {
     receiversList.forEach((receiver, index) => {
         if (index == 0) {
+            cy.wait(300)
             cy.get("#0-address").type(receiver.address)
             cy.get("#0-amount").type(receiver.amount)
         }
@@ -49,13 +50,21 @@ Cypress.Commands.add("switchChainWithConnect", chain => {
 })
 
 
-// Support only in connect status
-Cypress.Commands.add("switchChainWithoutConnect", (chain) => {
+Cypress.Commands.add("connectWithMetamask", (chain) => {
     cy.changeMetamaskNetwork(chain)
 
     publicPage.getNetworkSelectBtn().click()
     publicPage.getNetworkBoard().contains(chainList.get(chain), { includeShadowDom: true }).click()
+
+    cy.wait(500)
+    publicPage.getConnectWalletBtn().click()
     publicPage.getConnectBoard().contains("Browser Wallet", { includeShadowDom: true }).click()
+})
+
+
+// Get current chain in web
+Cypress.Commands.add("getChainSelected", () => {
+    return publicPage.getNetworkSelectBtn().invoke("text")
 })
 
 
@@ -66,7 +75,21 @@ Cypress.Commands.add("toConnect", () => {
 })
 
 
-Cypress.Commands.add("approveToken", (allowance=false) => {
+Cypress.Commands.add("approveToken", () => {
     transferPage.getUnlockBtn().click()
     cy.confirmMetamaskPermissionToSpend()
+    transferPage.getTransferStatusBoard().contains(/^Success$/, { timeout: 60000 })
+    transferPage.getTransferStatusBoardCloseBtn().click()
+})
+
+
+Cypress.Commands.add("submitTransfer", (chain) => {
+    transferPage.getTransferSubmitBtn().should("not.have.class", "cursor-not-allowed").click()
+    transferPage.getTransferStatusBoard().contains("Waiting For Confirmation")
+    cy.confirmMetamaskPermissionToSpend()
+
+    transferPage.getTransferStatusBoard().contains("Success", { timeout: 60000 }).then(() => {
+        cy.log("========"+chainBrowser.get(chain))
+        cy.get("[data-cy='view-browser-btn']").invoke("attr", "href").should("include", chainBrowser.get(chain))
+    })
 })
