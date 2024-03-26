@@ -60,5 +60,15 @@
                 "amount": 1
             }
         ]
+    },
+    "metis": {
+        "tokenSymbol": "Hermes",
+        "tokenContract": "0xb27BbeaACA2C00d6258C3118BAB6b5B6975161c8",
+        "receiversList": [
+            {
+                "address": "0x34833f0A35fa55C0d13cEf4b727F51f679ED6523",
+                "amount": 0.123123
+            }
+        ]
     }
 }

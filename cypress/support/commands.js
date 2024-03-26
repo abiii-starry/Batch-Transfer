@@ -89,7 +89,6 @@ Cypress.Commands.add("submitTransfer", (chain) => {
     cy.confirmMetamaskPermissionToSpend()
 
     transferPage.getTransferStatusBoard().contains("Success", { timeout: 60000 }).then(() => {
-        cy.log("========"+chainBrowser.get(chain))
         cy.get("[data-cy='view-browser-btn']").invoke("attr", "href").should("include", chainBrowser.get(chain))
     })
 })

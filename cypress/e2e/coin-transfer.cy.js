@@ -1,4 +1,4 @@
-const TEST_CHAIN = ["fantom"]  // ⭐Please fill in this variable before testing including ../fixtures/chain-list.js
+const TEST_CHAIN = ["metis", "cronos"]  // ⭐Please fill in this variable before testing including ../fixtures/chain-list.js
 
 describe("Normal Transfer", () => {
     beforeEach(() => {

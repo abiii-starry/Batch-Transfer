@@ -1,6 +1,12 @@
+// ***********************************************************
+// Before testing, make sure you have added the chain to the Metamask
+// Make sure the wallet to be tested is connected to the dapp
+// No support for BASE\Linea\Scroll\zkSync Era
+// ⭐Please fill in TEST_CHAIN list before testing including ../fixtures/chain-list.js
+// ***********************************************************
 import transferPage from "../pages/batch-transfer-page"
 
-const TEST_CHAIN = ["fantom", "polygon", "avalanche"]  // ⭐Please fill in this variable before testing including ../fixtures/chain-list.js
+const TEST_CHAIN = ["metis"] 
 
 describe("Normal Transfer", () => {
     beforeEach(() => {

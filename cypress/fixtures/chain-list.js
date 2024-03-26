@@ -1,10 +1,4 @@
-// export const chainList = new Map([
-//     ["Polygon", "Polygon"],
-//     ["BNB", "BNB Smart Chain"],
-//     ["FTM", "Fantom"],
-//     ["AVAX", "Avalanche"],
-//     ["ARB", "Arbitrum"]
-// ]);
+// No support for BASE\Linea\Scroll\zkSync Era
 
 export const chainList = new Map([
     ["bsc", "BNB Smart Chain"],
@@ -12,7 +6,12 @@ export const chainList = new Map([
     ["avalanche", "Avalanche"],
     ["fantom", "Fantom"],
     ["polygon", "Polygon"],
-    ["mainnet", "Ethereum"]
+    ["mainnet", "Ethereum"],
+    ["metis", "Metis"],
+    ["cronos", "Cronos Mainnet"],
+    ["klaytn", "Klaytn"],
+    ["okc", "OKC"],
+    ["optimism", "OP Mainnet"]
 ]);
 
 export const chainBrowser = new Map([
@@ -21,6 +20,11 @@ export const chainBrowser = new Map([
     ["avalanche", "snowtrace.io"],
     ["fantom", "ftmscan.com"],
     ["polygon", "polygonscan.com"],
-    ["mainnet", "etherscan.io"]
+    ["mainnet", "etherscan.io"],
+    ["metis", "andromeda-explorer.metis.io"],
+    ["cronos", "cronoscan.com"],
+    ["klaytn", "klaytnscope.com"],
+    ["okc", "oklink.com/okc"],
+    ["optimism", "optimistic.etherscan.io"]
 ]);
 
