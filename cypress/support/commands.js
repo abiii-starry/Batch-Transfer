@@ -27,6 +27,19 @@ import transferPage from "../pages/batch-transfer-page"
 import publicPage from "../pages/public-page"
 import { chainList, chainBrowser } from "../fixtures/chain-list"
 
+// Public Method
+Cypress.Commands.add("getCoinBalance", (chain, address) => {
+    const requestUrl = `https://api.fxwallet.com/wallet/${chain}/balance`
+    
+    return cy.request({
+        method: "GET",
+        url: requestUrl,
+        headers: {
+            "x-pubkey": address
+        }
+    }).its("body.balance")
+})
+
 Cypress.Commands.add("typeReceiver", (receiversList) => {
     receiversList.forEach((receiver, index) => {
         if (index == 0) {
@@ -92,3 +105,14 @@ Cypress.Commands.add("submitTransfer", (chain) => {
         cy.get("[data-cy='view-browser-btn']").invoke("attr", "href").should("include", chainBrowser.get(chain))
     })
 })
+
+
+Cypress.Commands.add("transConfirming", (chain) => {
+    transferPage.getTransferStatusBoard().contains("Waiting For Confirmation")
+    cy.confirmMetamaskPermissionToSpend()
+
+    transferPage.getTransferStatusBoard().contains("Success", { timeout: 60000 }).then(() => {
+        cy.get("[data-cy='view-browser-btn']").invoke("attr", "href").should("include", chainBrowser.get(chain))
+    })
+})
+

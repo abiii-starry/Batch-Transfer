@@ -6,7 +6,7 @@
 // ***********************************************************
 import transferPage from "../pages/batch-transfer-page"
 
-const TEST_CHAIN = ["metis"] 
+const TEST_CHAIN = ["polygon"] 
 
 describe("Normal Transfer", () => {
     beforeEach(() => {
@@ -26,7 +26,6 @@ describe("Normal Transfer", () => {
                     let tokenInfo = batchData[chain]
     
                     cy.connectWithMetamask(chain)
-
                     chooseToken(tokenInfo)
                     cy.typeReceiver(tokenInfo.receiversList)
 
@@ -34,11 +33,24 @@ describe("Normal Transfer", () => {
                     transferPage.getUnlockBtnContainer().then($container => {
                         // When the token does not need to be unlocked, the children of this element are empty
                         let containerChildren = $container.children()
-
                         containerChildren.length != 0 ? cy.approveToken() : cy.log("The token does not need to be unlocked")
                     })
                     
-                    cy.submitTransfer(chain)
+                    // cy.submitTransfer(chain)
+                    cy.wait(1000)
+                    transferPage.getTransferSubmitBtn().should("not.have.class", "cursor-not-allowed").then($submitBtn => {
+                        const balanceInit = Cypress.$("div[data-cy='balance-coin-bottom']>span").first().text()
+    
+                        cy.wrap($submitBtn).click()
+                        cy.transConfirming(chain)
+                        transferPage.getTransferStatusBoardCloseBtn().click()
+    
+                        cy.wait(1000).then(() => {
+                            const balanceFinal = Cypress.$("div[data-cy='balance-coin-bottom']>span").first().text()
+                            expect(balanceFinal).to.not.equal(balanceInit)
+                            cy.log(balanceInit, balanceFinal)
+                        }) 
+                    })
                 })
             })
         })

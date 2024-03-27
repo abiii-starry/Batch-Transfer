@@ -6,7 +6,17 @@
             "amount": 0.0001
         },
         {
-            "address": "0x4176382cd50c180d1dfa39c14089024c92091f9e",
+            "address": "0x720bc58e7cb66f663c4e0f8e5ade8b1113e188cf",
+            "amount": 0.0002
+        }
+    ],
+    "receiver-second": [
+        {
+            "address": "0x34833f0A35fa55C0d13cEf4b727F51f679ED6523",
+            "amount": 0.0001
+        },
+        {
+            "address": "0x720bc58e7cb66f663c4e0f8e5ade8b1113e188cf",
             "amount": 0.0002
         }
     ]

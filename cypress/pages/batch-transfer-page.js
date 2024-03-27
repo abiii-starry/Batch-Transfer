@@ -1,6 +1,6 @@
 class TransferPage{
     getTokenChooseBtn() {
-        return cy.get("[data-cy='token-choose-btn']")
+        return cy.get("[data-cy='token-choose-btn']", { timeout: 15000 })
     }
 
     getReceiverNum() {
